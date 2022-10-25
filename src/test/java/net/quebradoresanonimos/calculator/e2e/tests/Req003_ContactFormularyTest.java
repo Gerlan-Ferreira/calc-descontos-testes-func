@@ -24,7 +24,7 @@ public class Req003_ContactFormularyTest extends BaseTest {
         this.page = null;
     }
 
-    private String testStepsDefault(String name, String email, String type_message, Integer age, String writeHereYourMessage, String duvida, int i) {
+    private String testStepsDefault(String name, String email, String type_message, Integer age, String writeHereYourMessage, String duvida, Integer ageMessage) {
         return this.page.goToContactFormulary()
                 .setName(name)
                 .setEmail(email)
@@ -32,7 +32,7 @@ public class Req003_ContactFormularyTest extends BaseTest {
                 .setAge(age)
                 .setWriteHereYourMessage(writeHereYourMessage)
                 .submit()
-                .getMessageResultFormContact(type_message,age);
+                .getMessageResultFormContact(type_message,ageMessage);
     }
 
     @Nested

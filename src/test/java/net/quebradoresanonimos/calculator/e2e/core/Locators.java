@@ -28,6 +28,29 @@ public class Locators {
 
     public static final String ID_ESCREVA_SUA_MENSAGEM = "mensagem";
 
-    public static final String XPATH_MESSAGE_SUCCESS_FORM_CONTACT = "//div[@class='alert alert-dismissable alert-success']//span[.='']";
+    public static final String XPATH_MESSAGE_SUCCESS_DUVIDA_MENORQUE_18_FORM_CONTACT = "//div[@class='alert alert-dismissable alert-success']//span[.='Mensagem de DÚVIDA por usuário de idade MENOR QUE 18 ANOS foi enviada com sucesso!']";
+
+    public static final String XPATH_MESSAGE_SUCCESS_DUVIDA_MAIORIGUAL_A_18_MENORQUE30_FORM_CONTACT = "//div[@class='alert alert-dismissable alert-success']//span[.='Mensagem de DÚVIDA por usuário de idade ENTRE 18 E 29 ANOS foi enviada com sucesso!']";
+
+    public static final String XPATH_MESSAGE_SUCCESS_DUVIDA_MAIORIGUAL_A_30_MENORQUE65_FORM_CONTACT = "//div[@class='alert alert-dismissable alert-success']//span[.='Mensagem de DÚVIDA por usuário de idade ENTRE 30 E 64 ANOS foi enviada com sucesso!']";
+
+    public static final String XPATH_MESSAGE_SUCCESS_DUVIDA_MAIORIGUAL_A_65_FORM_CONTACT = "//div[@class='alert alert-dismissable alert-success']//span[.='Mensagem de DÚVIDA por usuário de idade A PARTIR DE 65 ANOS foi enviada com sucesso!']";
+
+    public static final String XPATH_MESSAGE_SUCCESS_SUGESTAO_MENORQUE_18_FORM_CONTACT = "//div[@class='alert alert-dismissable alert-success']//span[.='Mensagem de SUGESTÃO por usuário de idade MENOR QUE 18 ANOS foi enviada com sucesso!']";
+
+    public static final String XPATH_MESSAGE_SUCCESS_SUGESTAO_MAIORIGUAL_A_18_MENORQUE30_FORM_CONTACT = "//div[@class='alert alert-dismissable alert-success']//span[.='Mensagem de SUGESTÃO por usuário de idade ENTRE 18 E 29 ANOS foi enviada com sucesso!']";
+
+    public static final String XPATH_MESSAGE_SUCCESS_SUGESTAO_MAIORIGUAL_A_30_MENORQUE65_FORM_CONTACT = "//div[@class='alert alert-dismissable alert-success']//span[.='Mensagem de SUGESTÃO por usuário de idade ENTRE 30 E 64 ANOS foi enviada com sucesso!']";
+
+    public static final String XPATH_MESSAGE_SUCCESS_SUGESTAO_MAIORIGUAL_A_65_FORM_CONTACT = "//div[@class='alert alert-dismissable alert-success']//span[.='Mensagem de SUGESTÃO por usuário de idade A PARTIR DE 65 ANOS foi enviada com sucesso!']";
+
+    public static final String XPATH_MESSAGE_SUCCESS_RECLAMACAO_MENORQUE_18_FORM_CONTACT = "//div[@class='alert alert-dismissable alert-success']//span[.='Mensagem de RECLAMAÇÃO por usuário de idade MENOR QUE 18 ANOS foi enviada com sucesso!']";
+
+    public static final String XPATH_MESSAGE_SUCCESS_RECLAMACAO_MAIORIGUAL_A_18_MENORQUE30_FORM_CONTACT = "//div[@class='alert alert-dismissable alert-success']//span[.='Mensagem de RECLAMAÇÃO por usuário de idade ENTRE 18 E 29 ANOS foi enviada com sucesso!']";
+
+    public static final String XPATH_MESSAGE_SUCCESS_RECLAMACAO_MAIORIGUAL_A_30_MENORQUE65_FORM_CONTACT = "//div[@class='alert alert-dismissable alert-success']//span[.='Mensagem de RECLAMAÇÃO por usuário de idade ENTRE 30 E 64 ANOS foi enviada com sucesso!']";
+
+    public static final String XPATH_MESSAGE_SUCCESS_RECLAMACAO_MAIORIGUAL_A_65_FORM_CONTACT = "//div[@class='alert alert-dismissable alert-success']//span[.='Mensagem de RECLAMAÇÃO por usuário de idade A PARTIR DE 65 ANOS foi enviada com sucesso!']";
+
 
 }

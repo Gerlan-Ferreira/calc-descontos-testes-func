@@ -49,6 +49,10 @@ public class BasePage {
         return driver.findElement(By.xpath(text)).getText();
     }
 
+    public String getTextByCssSelector(String locator){
+        return driver.findElement(By.cssSelector(locator)).getText();
+    }
+
     public void clickElementById(String locator){
         WebElement element = getElementById(locator);
         element.click();

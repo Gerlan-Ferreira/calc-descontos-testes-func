@@ -5,8 +5,6 @@ import net.quebradoresanonimos.calculator.e2e.core.Locators;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-import java.lang.invoke.SwitchPoint;
-
 public class ContactFormPageObject extends BasePage {
     public ContactFormPageObject(WebDriver driver) {
         super(driver);
@@ -71,16 +69,16 @@ public class ContactFormPageObject extends BasePage {
         this.age = age.toString();
         if (age < 18){
             new Select(getElementById(Locators.ID_IDADE_FORM_CONTACT))
-                    .selectByValue(Locators.VALUE_IDADE_LESS18_FORM_CONTACT);
+                    .selectByValue(Locators.VALUE_IDADE_MENOR_QUE_18_FORM_CONTACT);
         } else if ((age >= 18) && (age < 30)) {
             new Select(getElementById(Locators.ID_IDADE_FORM_CONTACT))
-                    .selectByValue(Locators.VALUE_IDADE_MAIORIGUALA18_E_MENORQUE30_FORM_CONTACT);
+                    .selectByValue(Locators.VALUE_IDADE_MAIOR_IGUAL_A_18_E_MENOR_QUE_30_FORM_CONTACT);
         } else if ((age >= 30) && (age < 65)) {
             new Select(getElementById(Locators.ID_IDADE_FORM_CONTACT))
-                    .selectByValue(Locators.VALUE_IDADE_MAIORIGUALA30_E_MENORQUE65_FORM_CONTACT);
+                    .selectByValue(Locators.VALUE_IDADE_MAIOR_IGUAL_A_30_E_MENOR_QUE_65_FORM_CONTACT);
         } else if ((age > 65)) {
             new Select(getElementById(Locators.ID_IDADE_FORM_CONTACT))
-                    .selectByValue(Locators.VALUE_IDADE_MAIORIGUALA65FORM_CONTACT);
+                    .selectByValue(Locators.VALUE_IDADE_MAIOR_IGUAL_A_65_FORM_CONTACT);
         }
 
         return this;
@@ -104,42 +102,49 @@ public class ContactFormPageObject extends BasePage {
     }
 
     public String getMessageResultFormContact(String type_message, Integer age) {
+
         String result = "";
-        switch (type_message){
-            case "duvida":
-                if (age < 18){
-                    result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_DUVIDA_MENORQUE_18_FORM_CONTACT);
-                } else if ((age >= 18) && (age < 30)) {
-                    result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_DUVIDA_MAIORIGUAL_A_18_MENORQUE30_FORM_CONTACT);
-                } else if ((age >= 30) && (age < 65)) {
-                    result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_DUVIDA_MAIORIGUAL_A_30_MENORQUE65_FORM_CONTACT);
-                } else if (age >= 65) {
-                    result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_DUVIDA_MAIORIGUAL_A_65_FORM_CONTACT);
-                }
-                break;
-            case "sugestao":
-                if (age < 18){
-                    result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_SUGESTAO_MENORQUE_18_FORM_CONTACT);
-                } else if ((age >= 18) && (age < 30)) {
-                    result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_SUGESTAO_MAIORIGUAL_A_18_MENORQUE30_FORM_CONTACT);
-                } else if ((age >= 30) && (age < 65)) {
-                    result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_SUGESTAO_MAIORIGUAL_A_30_MENORQUE65_FORM_CONTACT);
-                } else if (age >= 65) {
-                    result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_SUGESTAO_MAIORIGUAL_A_65_FORM_CONTACT);
-                }
-                break;
-            case "reclamacao":
-                if (age < 18){
-                    result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_RECLAMACAO_MENORQUE_18_FORM_CONTACT);
-                } else if ((age >= 18) && (age < 30)) {
-                    result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_RECLAMACAO_MAIORIGUAL_A_18_MENORQUE30_FORM_CONTACT);
-                } else if ((age >= 30) && (age < 65)) {
-                    result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_RECLAMACAO_MAIORIGUAL_A_30_MENORQUE65_FORM_CONTACT);
-                } else if (age >= 65) {
-                    result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_RECLAMACAO_MAIORIGUAL_A_65_FORM_CONTACT);
-                }
-                break;
+
+        if ((type_message!= "") && (age != null)) {
+            switch (type_message) {
+                case "duvida":
+                    if (age < 18) {
+                        result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_DUVIDA_MENORQUE_18_FORM_CONTACT);
+                    } else if ((age >= 18) && (age < 30)) {
+                        result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_DUVIDA_MAIORIGUAL_A_18_MENORQUE30_FORM_CONTACT);
+                    } else if ((age >= 30) && (age < 65)) {
+                        result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_DUVIDA_MAIORIGUAL_A_30_MENORQUE65_FORM_CONTACT);
+                    } else if (age >= 65) {
+                        result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_DUVIDA_MAIORIGUAL_A_65_FORM_CONTACT);
+                    }
+                    break;
+                case "sugestao":
+                    if (age < 18) {
+                        result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_SUGESTAO_MENORQUE_18_FORM_CONTACT);
+                    } else if ((age >= 18) && (age < 30)) {
+                        result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_SUGESTAO_MAIORIGUAL_A_18_MENORQUE30_FORM_CONTACT);
+                    } else if ((age >= 30) && (age < 65)) {
+                        result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_SUGESTAO_MAIORIGUAL_A_30_MENORQUE65_FORM_CONTACT);
+                    } else if (age >= 65) {
+                        result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_SUGESTAO_MAIORIGUAL_A_65_FORM_CONTACT);
+                    }
+                    break;
+                case "reclamacao":
+                    if (age < 18) {
+                        result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_RECLAMACAO_MENORQUE_18_FORM_CONTACT);
+                    } else if ((age >= 18) && (age < 30)) {
+                        result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_RECLAMACAO_MAIORIGUAL_A_18_MENORQUE30_FORM_CONTACT);
+                    } else if ((age >= 30) && (age < 65)) {
+                        result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_RECLAMACAO_MAIORIGUAL_A_30_MENORQUE65_FORM_CONTACT);
+                    } else if (age >= 65) {
+                        result = getTextByXpath(Locators.XPATH_MESSAGE_SUCCESS_RECLAMACAO_MAIORIGUAL_A_65_FORM_CONTACT);
+                    }
+                    break;
+            }
+        } else {
+            result = getTextByXpath(Locators.XPATH_MESSAGE_ERROR_FORM_CONTACT);
         }
+
         return result;
 
     }
